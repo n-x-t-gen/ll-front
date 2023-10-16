@@ -1,12 +1,13 @@
-
+"use client";
 import React from "react";
 import styles from "./page.module.css";
 
-const HomePage: React.FC = () => {
+const RoomPage: React.FC = () => {
   return (
     <div className={styles.main}>
+      <h1>salas</h1>
     </div>
   );
 };
 
-export default HomePage;
+export default RoomPage;

@@ -3,15 +3,14 @@ const Calendar = dynamic(() => import("../../components/Calendar/Calendar"), {
   ssr: false,
 });
 
-import NavBar from "@/components/Navbar/Navbar";
 import dynamic from "next/dynamic";
 
 import React from "react";
+import styles from "./page.module.css";
 
 const HomePage: React.FC = () => {
   return (
-    <div>
-      <h1>Homepage Genérica</h1>
+    <div className={styles.main}>
       <Calendar />
     </div>
   );

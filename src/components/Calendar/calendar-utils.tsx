@@ -10,7 +10,7 @@ export const INITIAL_EVENTS = [
   {
     id: createEventId(),
     title: "Evento teste com hora",
-    start: todayStr + "T16:20:00",
+    start: todayStr + "T08:00:00",
   },
 ];
 
