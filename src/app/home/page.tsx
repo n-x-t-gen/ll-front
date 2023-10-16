@@ -1,5 +1,5 @@
 "use client";
-const Calendar = dynamic(() => import("../../components/Calendar/Calendar"), {
+const Calendar = dynamic(() => import("../../components/Calendar/Calendar-2"), {
   ssr: false,
 });
 
