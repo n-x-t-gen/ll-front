@@ -6,7 +6,7 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { INITIAL_EVENTS, createEventId } from "./calendar-utils";
 import { Checkbox, FormControlLabel } from "@mui/material";
-
+import ptLocale from '@fullcalendar/core/locales/pt'
 export default class Calendar extends React.Component {
   state = {
     weekendsVisible: true,
@@ -20,6 +20,7 @@ export default class Calendar extends React.Component {
         <div className="demo-app-main">
           <FullCalendar
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+            locale={ptLocale}
             headerToolbar={{
               left: "prev,next today",
               center: "title",
@@ -36,6 +37,7 @@ export default class Calendar extends React.Component {
             eventContent={renderEventContent} // custom render function
             eventClick={this.handleEventClick}
             eventsSet={this.handleEvents} // called after events are initialized/added/changed/removed
+
             /* you can update a remote database when these fire:
             eventAdd={function(){}}
             eventChange={function(){}}

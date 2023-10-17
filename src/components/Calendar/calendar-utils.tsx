@@ -8,7 +8,7 @@ export const INITIAL_EVENTS = [
     title: "Planejar semana",
     daysOfWeek: ["1"],
     start: todayStr,
-    color: "#000",
+    color: "#4C2C72",
   },
   {
     title: "event",
@@ -19,12 +19,13 @@ export const INITIAL_EVENTS = [
     groupId: "3",
     title: "Criar petição",
     start: "2023-10-18",
-    color: "purple",
+    color: "#4C2C72",
   },
   {
     id: createEventId(),
     title: "Cobrar recursos",
     start: "2023-10-23",
+    color: "#4C2C72",
   },
   {
     groupId: "2",
@@ -37,6 +38,7 @@ export const INITIAL_EVENTS = [
     title: "Planejamento de audiência",
     start: "2023-10-20",
     end: "2023-10-24",
+    color: "#4C2C72",
   },
 ];
 
