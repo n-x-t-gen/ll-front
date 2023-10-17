@@ -109,3 +109,28 @@ a {
   }
 }
 
+/* FULLCALENDAR */
+
+/* botões de passagem de mês e seletor dia-mes-semana */
+.fc .fc-button-primary:disabled {
+  background-color: #fff;
+  border-color: #303030;
+  color: #303030;
+}
+
+.fc .fc-button-primary {
+  background-color: #303030;
+  border-color: #303030;
+  color: #fff;
+}
+
+.fc .fc-button-primary {
+  margin-bottom: 96px;
+  margin-right: 12px;
+}
+
+.fc .fc-daygrid-day-frame {
+  min-height: 100%;
+  position: relative;
+  /*background-color: red; /* cor de fundo do dia */
+}

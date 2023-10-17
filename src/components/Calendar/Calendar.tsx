@@ -6,7 +6,9 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { INITIAL_EVENTS, createEventId } from "./calendar-utils";
 import { Checkbox, FormControlLabel } from "@mui/material";
-import ptLocale from '@fullcalendar/core/locales/pt'
+import ptLocale from "@fullcalendar/core/locales/pt";
+import styles from "./Calendar.module.css";
+
 export default class Calendar extends React.Component {
   state = {
     weekendsVisible: true,

@@ -6,7 +6,6 @@ import Calendar from "@/components/Calendar/Calendar";
 const SchedulePage: React.FC = () => {
   return (
     <div className={styles.main}>
-      <h1>agendamentos</h1>
       <Calendar />
     </div>
   );
