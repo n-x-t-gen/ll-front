@@ -28,7 +28,7 @@ export const INITIAL_EVENTS = [
     color: "#4C2C72",
   },
   {
-    groupId: "2",
+    id: "createEventId()",
     title: "Audiência",
     start: "2023-10-23",
     url: "https://google.com/",

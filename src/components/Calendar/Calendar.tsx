@@ -3,18 +3,41 @@ import { formatDate } from "@fullcalendar/core";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
-import interactionPlugin from "@fullcalendar/interaction";
+import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
 import { INITIAL_EVENTS, createEventId } from "./calendar-utils";
 import { Checkbox, FormControlLabel } from "@mui/material";
 import ptLocale from "@fullcalendar/core/locales/pt";
 import styles from "./Calendar.module.css";
 
-export default class Calendar extends React.Component {
+class Calendar extends React.Component {
   state = {
     weekendsVisible: true,
     currentEvents: [],
+    isDraggableInitialized: false,
   };
   label = { inputProps: { "aria-label": "Ativar/desativar finais de semana" } };
+
+  componentDidMount() {
+    this.setupDraggable();
+  }
+
+  setupDraggable() {
+    if (!this.state.isDraggableInitialized) {
+      const containerEl = document.querySelector("#events");
+
+      if (containerEl instanceof HTMLElement) {
+        new Draggable(containerEl, {
+          itemSelector: ".appointmentToken",
+          eventData: (eventEl) => ({
+            title: eventEl.innerText,
+          }),
+        });
+
+        this.setState({ isDraggableInitialized: true });
+      }
+    }
+  }
+
   render() {
     return (
       <div className="demo-app">
@@ -34,19 +57,18 @@ export default class Calendar extends React.Component {
             selectMirror={true}
             dayMaxEvents={true}
             weekends={this.state.weekendsVisible}
-            initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
+            initialEvents={INITIAL_EVENTS}
             select={this.handleDateSelect}
-            eventContent={renderEventContent} // custom render function
+            eventContent={renderEventContent}
             eventClick={this.handleEventClick}
-            eventsSet={this.handleEvents} // called after events are initialized/added/changed/removed
-
-            /* you can update a remote database when these fire:
-            eventAdd={function(){}}
-            eventChange={function(){}}
-            eventRemove={function(){}}
-            */
+            eventsSet={this.handleEvents}
           />
         </div>
+        <ul id="events">
+          <li className="appointmentToken">teste 1</li>
+          <li className="appointmentToken">teste 2</li>
+          <li className="appointmentToken">teste 3</li>
+        </ul>
       </div>
     );
   }
@@ -127,3 +149,7 @@ function renderSidebarEvent(event: any) {
     </li>
   );
 }
+
+export default Calendar;
+
+// TODO: verificar o drag duplicado
