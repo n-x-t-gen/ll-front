@@ -1,9 +1,10 @@
-import Navbar from "@/components/Navbar/Navbar";
-import "./globals.css";
+import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Footer from "@/components/Footer/Footer";
-import SideNavbar from "@/components/SideNavbar/SideNavbar";
+import { ClerkProvider } from "@clerk/nextjs";
+
+import "../globals.css";
+import { ptBR } from "@clerk/localizations";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
-      <body className={inter.className}>
-        <SideNavbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <ClerkProvider appearance={{}}  localization={ptBR}>
+      <html lang="pt-BR">
+        <body className={`${inter.className} bg-dark-1`}>{children}</body>
+      </html>
+    </ClerkProvider>
   );
 }

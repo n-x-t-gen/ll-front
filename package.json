@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/next-js": "^2.1.5",
+    "@chakra-ui/react": "^2.8.1",
+    "@clerk/localizations": "^1.26.7",
+    "@clerk/nextjs": "^4.26.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.8",
@@ -18,11 +22,16 @@
     "@fullcalendar/timegrid": "^6.1.9",
     "@mui/icons-material": "^5.14.13",
     "@mui/material": "^5.14.13",
-    "next": "13.5.4",
+    "@uploadthing/react": "^5.7.0",
+    "framer-motion": "^10.16.4",
+    "mongoose": "^7.6.3",
+    "next": "^14.0.1-canary.5",
     "react": "^18",
     "react-dom": "^18",
+    "svix": "^1.13.0",
     "sweetalert2": "^11.7.32",
-    "sweetalert2-react-content": "^5.0.7"
+    "sweetalert2-react-content": "^5.0.7",
+    "uploadthing": "^5.7.2"
   },
   "devDependencies": {
     "@types/node": "^20",
